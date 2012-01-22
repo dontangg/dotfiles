@@ -16,7 +16,8 @@ colorscheme molokai
 
 set autoindent             " automatic indent new lines
 set smartindent            " be smart about it
-inoremap # X<BS>#          " indent lines starting with # too
+" indent lines starting with # too
+inoremap # X<BS>#
 set nowrap                 " do not wrap lines
 set softtabstop=2          " yep, two
 set shiftwidth=2           " ..
