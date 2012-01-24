@@ -64,3 +64,6 @@ bubble bath.
 
 I forked [Zach Holman](http://github.com/holman)' excellent
 [dotfiles](http://github.com/holman/dotfiles).
+
+I found a bunch of crazy useful settings from 
+[janus](http://github.com/carlhuda/janus).

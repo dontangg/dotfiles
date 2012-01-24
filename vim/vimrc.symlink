@@ -8,25 +8,26 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
+set encoding=utf-8         " Set default encoding to UTF-8
 colorscheme railscasts
 
 " ----------------------------------------------------------------------------
 "  Text Formatting
 " ----------------------------------------------------------------------------
 
-set autoindent             " automatic indent new lines
-set smartindent            " be smart about it
+set autoindent              " automatic indent new lines
+set smartindent             " be smart about it
 " indent lines starting with # too
 inoremap # X<BS>#
-set nowrap                 " do not wrap lines
-set softtabstop=2          " yep, two
-set shiftwidth=2           " ..
-set tabstop=4              " the width of the tab character
-set expandtab              " expand tabs to spaces
-set nosmarttab             " no tabs
-set formatoptions+=n       " support for numbered/bullet lists
-"set textwidth=80           " wrap at 80 chars by default
-set virtualedit=block      " allow virtual edit in visual block ..
+set nowrap                  " do not wrap lines
+set softtabstop=2           " yep, two
+set shiftwidth=2            " ..
+set tabstop=4               " the width of the tab character
+set expandtab               " expand tabs to spaces
+set nosmarttab              " no tabs
+set formatoptions+=n        " support for numbered/bullet lists
+"set textwidth=80            " wrap at 80 chars by default
+set virtualedit=block       " allow virtual edit in visual block ..
 
 " ----------------------------------------------------------------------------
 "  Remapping
@@ -55,36 +56,71 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
+" Next/previous buffer
+nnoremap <silent> ,. :bnext<CR>
+nnoremap <silent> ,m :bprev<CR>
+
+" Next/previous tab
+" nnoremap <silent> ;' :tabnext<CR>
+" nnoremap <silent> ;l :tabprev<CR>
+
 " ----------------------------------------------------------------------------
 "  UI
 " ----------------------------------------------------------------------------
 
-set ruler                  " show the cursor position all the time
-set noshowcmd              " don't display incomplete commands
-set nolazyredraw           " turn off lazy redraw
-set number                 " line numbers
-set wildmenu               " turn on wild menu
+set ruler                   " show the cursor position all the time
+set noshowcmd               " don't display incomplete commands
+set nolazyredraw            " turn off lazy redraw
+set number                  " line numbers
+set wildmenu                " turn on wild menu
 set wildmode=list:longest,full
-set ch=2                   " command line height
-set backspace=2            " allow backspacing over everything in insert mode
-set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
-set shortmess=filtIoOA     " shorten messages
-set report=0               " tell us about changes
-set nostartofline          " don't jump to the start of line when scrolling
-set guioptions-=T          " don't show button toolbar in MacVim
+set ch=2                    " command line height
+set backspace=2             " allow backspacing over everything in insert mode
+set whichwrap+=<,>,h,l,[,]  " backspace and cursor keys wrap to
+set shortmess=filtIoOA      " shorten messages
+set report=0                " tell us about changes
+set nostartofline           " don't jump to the start of line when scrolling
+set guioptions-=T           " don't show button toolbar in MacVim
 
 
 " ----------------------------------------------------------------------------
 " Visual Cues
 " ----------------------------------------------------------------------------
 
-set showmatch              " brackets/braces that is
-set mat=5                  " duration to show matching brace (1/10 sec)
-set incsearch              " do incremental searching
-set laststatus=2           " always show the status line
-set ignorecase             " ignore case when searching
-set nohlsearch             " don't highlight searches
-set visualbell             " shut up
+set showmatch               " brackets/braces that is
+set mat=5                   " duration to show matching brace (1/10 sec)
+set incsearch               " do incremental searching
+set laststatus=2            " always show the status line
+set ignorecase              " ignore case when searching...
+set smartcase               " ... unless there is at least one capital
+set nohlsearch              " don't highlight searches
+set visualbell              " shut up
+
+
+
+" ---------------------------------------------------------------------------
+" List Chars
+" ---------------------------------------------------------------------------
+
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.            " show trailing spaces as dots
+set listchars+=extends:>          " The character to show in the last column when wrap is off and the line continues beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the last column when wrap is off and the line continues beyond the right of the screen
+
+
+
+" ---------------------------------------------------------------------------
+" List Chars
+" ---------------------------------------------------------------------------
+
+if has("gui_running")
+  if has("autocmd")
+    " Automatically resize splits when resizing MacVim window
+    autocmd VimResized * wincmd =
+  endif
+endif
+
 
 
 " ---------------------------------------------------------------------------
