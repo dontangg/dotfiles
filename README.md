@@ -3,7 +3,7 @@
 ## dotfiles
 
 Your dotfiles are how you personalize your system. These are mine. The very
-prejudiced mix: OS X, zsh, Ruby, Rails, git, homebrew, rb_env, vim. If you
+prejudiced mix: OS X, zsh, Ruby, Rails, git, homebrew, rbenv, vim. If you
 match up along most of those lines, you may dig my dotfiles.
 
 This is just a fork of [holman's dotfiles](https://github.com/holman/dotfiles).
@@ -59,6 +59,8 @@ bubble bath.
 
 - If you want some more colors for things like `ls`, install grc: `brew install
   grc`.
+- If you install the excellent [rbenv](https://github.com/sstephenson/rbenv) to
+  manage multiple rubies, your current branch will show up in the prompt. Bonus.
 
 ## thanks
 
