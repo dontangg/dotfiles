@@ -40,7 +40,7 @@ let mapleader = ","
 "inoremap jj <ESC>
 
 " map CtrlP to ,t
-nnoremap ,t :CtrlP<CR>
+"nnoremap ,t :CtrlP<CR>
 
 " reflow paragraph with Q in normal and visual mode
 nnoremap Q gqap
@@ -111,6 +111,14 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the last column when wrap is off and the line continues beyond the right of the screen
 
 
+
+" ---------------------------------------------------------------------------
+" Ctrl-P options
+" http://kien.github.io/ctrlp.vim/
+" ---------------------------------------------------------------------------
+
+let g:ctrlp_map = ',t'
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " ---------------------------------------------------------------------------
 " List Chars
