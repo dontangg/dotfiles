@@ -62,6 +62,9 @@ inoremap <Up> <C-o>gk
 nnoremap <silent> ,. :bnext<CR>
 nnoremap <silent> ,m :bprev<CR>
 
+" NerdTree
+nnoremap <silent> ,n :NERDTree<CR>
+
 " Next/previous tab
 " nnoremap <silent> ;' :tabnext<CR>
 " nnoremap <silent> ;l :tabprev<CR>
