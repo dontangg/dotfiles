@@ -58,10 +58,17 @@ ruby_version() {
   fi
 }
 
+node_version() {
+  if (( $+commands[node] ))
+  then
+    echo "$(node --version)"
+  fi
+}
+
 rb_prompt() {
   if ! [[ -z "$(ruby_version)" ]]
   then
-    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%} "
+    echo "%{$fg_bold[yellow]%}$(node_version)%{$reset_color%} "
   else
     echo ""
   fi
