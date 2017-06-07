@@ -65,10 +65,14 @@ node_version() {
   fi
 }
 
+kube_context() {
+  echo "$(kubectl config current-context)"
+}
+
 rb_prompt() {
   if ! [[ -z "$(ruby_version)" ]]
   then
-    echo "%{$fg_bold[yellow]%}$(node_version)%{$reset_color%} "
+    echo "%{$fg_bold[yellow]%}$(node_version) %{$fg_bold[green]%}$(kube_context)%{$reset_color%} "
   else
     echo ""
   fi
