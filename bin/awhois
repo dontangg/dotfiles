@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+open https://ancestryonline.sharepoint.com/search/Pages/peopleresults.aspx?k=$1

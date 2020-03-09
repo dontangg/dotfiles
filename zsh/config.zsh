@@ -4,7 +4,8 @@ else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
-export LSCOLORS="exfxcxdxbxegedabagacad"
+# Generate color scheme here: https://geoff.greer.fm/lscolors/
+export LSCOLORS="gxfxcxdxbxegedabagacad" #"exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 fpath=($ZSH/zsh/functions $fpath)
@@ -46,3 +47,4 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+bindkey '^R' history-incremental-pattern-search-backward

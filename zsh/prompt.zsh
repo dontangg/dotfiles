@@ -69,10 +69,14 @@ kube_context() {
   echo "$(kubectl config current-context)"
 }
 
-rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
+kube_prompt() {
+  echo "%{$fg_bold[green]%}$(kube_context)%{$reset_color%} "
+}
+
+node_prompt() {
+  if ! [[ -z "$(node_version)" ]]
   then
-    echo "%{$fg_bold[yellow]%}$(node_version) %{$fg_bold[green]%}$(kube_context)%{$reset_color%} "
+    echo "%{$fg_bold[yellow]%}$(node_version)%{$reset_color%} "
   else
     echo ""
   fi
@@ -82,7 +86,7 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(kube_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
